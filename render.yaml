@@ -1,0 +1,21 @@
+# Render.com deploy config
+services:
+  - type: web
+    name: whatsapp-bot-400plus
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20.0.0
+      - key: BOT_NAME
+        value: MyBot MD
+      - key: OWNER_NUMBER
+        sync: false
+      - key: PHONE_NUMBER
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PREFIX
+        value: .
